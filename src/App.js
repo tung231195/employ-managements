@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
-import EmployeeForm from './components/employees/EmployeeForm';
-import EmployeeList from './components/employees/EmployeeList';
+import React, {  useState } from 'react';
+
+import EmployeeList from './app/components/employees/EmployeeList';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='employs'>
       <h1>Employee Management</h1>
-      {showForm ? (
-        <EmployeeForm onClose={() => setShowForm(false)} />
-      ) : (
-        <div style={{display:"flex",justifyContent:"center"}}>
-            <button onClick={() => setShowForm(true)}>Add Employee</button>
-        </div>
-      )}
-      <EmployeeList />
+      <EmployeeList setShowForm={setShowForm} showForm={showForm} />
     </div>
   );
 }

@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Employee Management System (React + Redux)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Employee Management System built with React, Redux Toolkit, and
+React Hook Form.\
+It supports full CRUD operations, search, pagination, sorting, bulk
+delete, and Docker deployment.
 
-## Available Scripts
+------------------------------------------------------------------------
 
-In the project directory, you can run:
+##  Features
 
-### `npm start`
+-   ✅ Add / Edit / Delete Employees
+-   ✅ Search by Name
+-   ✅ Pagination with Custom Page Size
+-   ✅ Sort by ID, Name, Gender
+-   ✅ Select Multiple & Bulk Delete
+-   ✅ Form Validation with React Hook Form
+-   ✅ Docker Build & Run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+------------------------------------------------------------------------
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Tech Stack
 
-### `npm test`
+-   React 18+
+-   Redux Toolkit
+-   React Hook Form
+-   Docker
+-   JavaScript (ES6)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+------------------------------------------------------------------------
 
-### `npm run build`
+##  Installation (Local)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    git clone <YOUR_GIT_REPO_URL>
+    cd employee-management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Install dependencies
 
-### `npm run eject`
+    npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Run project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open browser:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    http://localhost:3000
 
-## Learn More
+------------------------------------------------------------------------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##  Docker Build & Run
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ✅ 1. Create Dockerfile
 
-### Code Splitting
+  FROM node:20-alpine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  WORKDIR /src
 
-### Analyzing the Bundle Size
+  COPY package*.json ./
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  RUN npm install --production
 
-### Making a Progressive Web App
+  COPY . .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  EXPOSE 3000
 
-### Advanced Configuration
+  CMD ["npm", "start"]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+------------------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ✅ 2. Build Docker Image
 
-### `npm run build` fails to minify
+    docker build -t employee-app .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+------------------------------------------------------------------------
+
+### ✅ 3. Run Container
+
+    docker run -p 3000:3000 employee-app
+
+Open in browser:
+
+    http://localhost:3000
+
+------------------------------------------------------------------------
+##  Author
+
+-   Name: Your Name
+-   GitHub: Your GitHub Link
+-   Email: your-email@gmail.com
+
+------------------------------------------------------------------------
+
+## ✅ License
+
+This project is created by kenny danh

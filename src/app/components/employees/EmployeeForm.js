@@ -1,14 +1,23 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { addEmployee, updateEmployee } from '../../store/employeeSlice';
+import { addEmployee, updateEmployee } from '../../../store/employeeSlice';
 
 export default function EmployeeForm({ employee, onClose }) {
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
-
   useEffect(() => {
-    if (employee) reset(employee);
+    if (employee) {
+      reset(employee);
+    } else {
+      reset({
+        name: "",
+        dateOfBirth: "",
+        gender: "",
+        email: "",
+        address: ""
+      });
+    }
   }, [employee, reset]);
 
   const onSubmit = (data) => {
