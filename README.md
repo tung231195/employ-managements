@@ -33,7 +33,7 @@ delete, and Docker deployment.
 
 ### 1. Clone repository
 
-    git clone <YOUR_GIT_REPO_URL>
+    git clone https://github.com/tung231195/employ-managements.git
     cd employee-management
 
 ### 2. Install dependencies
@@ -88,9 +88,8 @@ Open in browser:
 ------------------------------------------------------------------------
 ##  Author
 
--   Name: Your Name
--   GitHub: Your GitHub Link
--   Email: your-email@gmail.com
+-   Name: Kenny Danh
+-   Email: kennydanhl@gmail.com
 
 ------------------------------------------------------------------------
 
